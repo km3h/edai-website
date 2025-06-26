@@ -11,12 +11,513 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-DUmmAQyx.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DJQEYTJX.css">
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+        line-height: 1.6;
+        color: #1c1c1e;
+        background-color: #fafafa;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Header */
+      header {
+        padding: 2rem 0;
+        background-color: #fafafa;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        color: #1c1c1e;
+      }
+
+      .contact-link {
+        color: #007aff;
+        text-decoration: none;
+        font-weight: 400;
+        transition: opacity 0.2s ease;
+      }
+
+      .contact-link:hover {
+        opacity: 0.8;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 4rem 0 6rem;
+        text-align: center;
+        background-color: #fafafa;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        color: #1c1c1e;
+      }
+
+      .hero h1 .subtitle {
+        color: #8e8e93;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 1.6;
+        color: #8e8e93;
+        margin-bottom: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #007aff;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.125rem;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #0056b3;
+      }
+
+      .cta-button svg {
+        margin-left: 0.75rem;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      /* Services Section */
+      .services {
+        padding: 6rem 0;
+        background-color: white;
+      }
+
+      .services h2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #1c1c1e;
+      }
+
+      .services-subtitle {
+        font-size: 1.125rem;
+        color: #8e8e93;
+        text-align: center;
+        margin-bottom: 4rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
+
+      .service-card {
+        text-align: center;
+      }
+
+      .service-icon {
+        width: 4rem;
+        height: 4rem;
+        background-color: #f2f2f7;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        transition: background-color 0.2s ease;
+      }
+
+      .service-card:hover .service-icon {
+        background-color: #e5e5ea;
+      }
+
+      .service-icon svg {
+        width: 2rem;
+        height: 2rem;
+        color: #1c1c1e;
+      }
+
+      .service-card h3 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+        color: #1c1c1e;
+      }
+
+      .service-card p {
+        color: #8e8e93;
+        line-height: 1.6;
+      }
+
+      /* About Section */
+      .about {
+        padding: 6rem 0;
+        background-color: #fafafa;
+        text-align: center;
+      }
+
+      .about h2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        margin-bottom: 2rem;
+        color: #1c1c1e;
+      }
+
+      .about p {
+        font-size: 1.125rem;
+        color: #8e8e93;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 300;
+        color: #007aff;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: #8e8e93;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 6rem 0;
+        background-color: white;
+        text-align: center;
+      }
+
+      .contact h2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        margin-bottom: 1.5rem;
+        color: #1c1c1e;
+      }
+
+      .contact p {
+        font-size: 1.125rem;
+        color: #8e8e93;
+        line-height: 1.6;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .email-button {
+        display: inline-flex;
+        align-items: center;
+        background-color: #007aff;
+        color: white;
+        padding: 1.25rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.125rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        transition: background-color 0.2s ease;
+      }
+
+      .email-button:hover {
+        background-color: #0056b3;
+      }
+
+      .email-button svg {
+        margin-right: 1rem;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      .response-time {
+        color: #8e8e93;
+        font-size: 0.875rem;
+      }
+
+      /* Footer */
+      footer {
+        padding: 3rem 0;
+        border-top: 1px solid #e5e5ea;
+        background-color: #fafafa;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        font-size: 1.125rem;
+        font-weight: 300;
+        color: #1c1c1e;
+      }
+
+      .footer-text {
+        color: #8e8e93;
+        font-size: 0.875rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1.125rem;
+        }
+
+        .services h2,
+        .about h2,
+        .contact h2 {
+          font-size: 2rem;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .stats {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .footer-content {
+          text-align: center;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">EDAI LLC</div>
+          <a href="mailto:info@appsforedai.com" class="contact-link">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>
+          Building exceptional apps<br />
+          <span class="subtitle">for the Apple ecosystem</span>
+        </h1>
+        
+        <p>
+          We craft high-quality applications across iOS, iPadOS, macOS, tvOS, and visionOS platforms with precision and attention to detail.
+        </p>
+
+        <a href="mailto:info@appsforedai.com" class="cta-button">
+          Start Your Project
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <h2>Apple Platform Expertise</h2>
+        <p class="services-subtitle">
+          From mobile to desktop, TV to mixed reality—we develop across the entire Apple ecosystem.
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3>iOS</h3>
+            <p>iPhone applications with native performance and intuitive user experiences.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3>iPadOS</h3>
+            <p>iPad-optimized apps leveraging the full potential of the larger canvas.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3>macOS</h3>
+            <p>Desktop applications that seamlessly integrate with the Mac experience.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10M7 4l-2 16h14l-2-16" />
+              </svg>
+            </div>
+            <h3>tvOS</h3>
+            <p>Apple TV apps designed for the big screen and remote interaction.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+            </div>
+            <h3>visionOS</h3>
+            <p>Spatial computing experiences for Apple Vision Pro and mixed reality.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3>Native Development</h3>
+            <p>Swift and SwiftUI expertise for optimal performance and platform integration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="container">
+        <h2>Crafted with Apple's Design Principles</h2>
+        
+        <p>
+          Every application we build follows Apple's Human Interface Guidelines, ensuring your users get familiar, intuitive, and delightful experiences across all their devices.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Apple Platforms</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Apple Focused</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <div class="container">
+        <h2>Ready to build something great?</h2>
+        
+        <p>
+          Let's discuss your Apple app project and bring your vision to life across the entire ecosystem.
+        </p>
+
+        <a href="mailto:info@appsforedai.com" class="email-button">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          info@appsforedai.com
+        </a>
+        
+        <p class="response-time">
+          We typically respond within 24 hours
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">EDAI LLC</div>
+          <div class="footer-text">
+            © 2024 EDAI LLC. Specialized in Apple ecosystem development.
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
